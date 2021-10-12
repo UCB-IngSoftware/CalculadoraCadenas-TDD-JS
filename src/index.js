@@ -1,15 +1,11 @@
-import sumar from "./App";
+import { sumarCadena } from "./CalculadoraCadenas";
 
-const first = document.querySelector("#first-number");
-const second = document.querySelector("#second-number");
-const form = document.querySelector("#sumar-form");
+const cadenaIngreso = document.querySelector("#cadena-ingreso");
+const form = document.querySelector("#calculadora-form");
 const div = document.querySelector("#resultado-div");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
-
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  const cadenaInput = cadenaIngreso.value;
+  div.innerHTML = "<p>" + sumarCadena(cadenaInput) + "</p>";
 });
